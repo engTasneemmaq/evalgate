@@ -6,11 +6,11 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '24'
           cache: npm
@@ -26,11 +26,11 @@ jobs:
           if [ "$result" -lt 2 ]; then
             {
               echo '### EvalGate release report'
-              jq -r '"Status: **" + .status + "**", " + .baseline + " → " + .candidate, (.results[] | .case as $case | .checks[] | select(.passed | not) | "- " + $case.title + ": " + .name + " (" + .detail + ")")' evaluation.json
+              jq -r '"Status: **\(.status)**, \(.baseline) → \(.candidate)", (.results[] | .case as $case | .checks[] | select(.passed | not) | "- \($case.title): \(.name) (\(.detail))")' evaluation.json
             } >> "$GITHUB_STEP_SUMMARY"
           fi
           exit "$result"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: evalgate-report
