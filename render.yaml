@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: evalgate
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/config
+    envVars:
+      - key: EVALGATE_PUBLIC_DEMO
+        value: "true"

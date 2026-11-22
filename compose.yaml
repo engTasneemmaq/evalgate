@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgres://evalgate:evalgate@db:5432/evalgate?sslmode=disable
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: evalgate
+      POSTGRES_PASSWORD: evalgate
+      POSTGRES_DB: evalgate
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evalgate -d evalgate"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+    volumes:
+      - runs:/var/lib/postgresql/data
+volumes:
+  runs:

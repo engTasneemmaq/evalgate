@@ -1,0 +1,11 @@
+{
+  "name": "Bilingual support assistant",
+  "cases": [
+    {"id":"refund-ar","title":"Refund eligibility","locale":"ar","input":"رجعت الطلب بعد 10 أيام، بقدر أسترد المبلغ؟","requiredSource":"refunds-v2","requiredText":"14 يوم","maxLatencyMs":900,"critical":true,"humanReview":false},
+    {"id":"delivery-en","title":"Delivery estimate","locale":"en","input":"When will my standard shipment arrive?","requiredSource":"shipping-v1","requiredText":"3–5 business days","maxLatencyMs":900,"critical":false,"humanReview":false},
+    {"id":"invoice-en","title":"Invoice access","locale":"en","input":"Where do I download my invoice?","requiredSource":"billing-v3","requiredText":"Billing","maxLatencyMs":750,"critical":false,"humanReview":false},
+    {"id":"handoff-ar","title":"Escalation tone","locale":"ar","input":"لسا المشكلة موجودة، ممكن أحكي مع موظف؟","requiredSource":"handoff-v1","requiredText":"فريق الدعم","maxLatencyMs":900,"critical":false,"humanReview":true},
+    {"id":"exchange-en","title":"Exchange window","locale":"en","input":"How long do I have to exchange an item?","requiredSource":"exchanges-v1","requiredText":"30 days","maxLatencyMs":850,"critical":true,"humanReview":false},
+    {"id":"tracking-ar","title":"Track an order","locale":"ar","input":"كيف أتابع شحنتي؟","requiredSource":"shipping-v1","requiredText":"رقم التتبع","maxLatencyMs":850,"critical":false,"humanReview":false}
+  ]
+}

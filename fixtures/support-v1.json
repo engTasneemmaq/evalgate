@@ -1,0 +1,59 @@
+{
+  "id": "support-v1",
+  "outputs": {
+    "refund-ar": {
+      "response": {
+        "answer": "يمكنك طلب الاسترداد خلال 14 يوم من الاستلام وفق سياسة الاسترجاع.",
+        "sources": [
+          "refunds-v2"
+        ]
+      },
+      "latencyMs": 620
+    },
+    "delivery-en": {
+      "response": {
+        "answer": "Standard shipping usually takes 3–5 business days.",
+        "sources": [
+          "shipping-v1"
+        ]
+      },
+      "latencyMs": 590
+    },
+    "invoice-en": {
+      "response": {
+        "answer": "Open Billing and select Download invoice.",
+        "sources": [
+          "billing-v3"
+        ]
+      },
+      "latencyMs": 670
+    },
+    "handoff-ar": {
+      "response": {
+        "answer": "أكيد، بقدر أحوّل طلبك إلى فريق الدعم حتى يساعدك.",
+        "sources": [
+          "handoff-v1"
+        ]
+      },
+      "latencyMs": 730
+    },
+    "exchange-en": {
+      "response": {
+        "answer": "You have 30 days from delivery to exchange eligible items.",
+        "sources": [
+          "exchanges-v1"
+        ]
+      },
+      "latencyMs": 610
+    },
+    "tracking-ar": {
+      "response": {
+        "answer": "استخدم رقم التتبع الموجود في رسالة الشحن لمتابعة طلبك.",
+        "sources": [
+          "shipping-v1"
+        ]
+      },
+      "latencyMs": 640
+    }
+  }
+}
